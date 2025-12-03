@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url('assets/images/background.jpeg') center/cover no-repeat;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+}
+
+/* DARK OVERLAY */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
+}
+
+/* RETRO SCANLINE EFFECT */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.15) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  z-index: 99;
+}
+
+/* MAIN */
+.main {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  height: 100%;
+  padding: 60px;
+}
+
+/* LEFT */
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo {
+  width: 80px;
+  margin-bottom: 25px;
+}
+
+/* GLITCH TEXT */
+.glitch {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 2.7rem;
+  position: relative;
+  color: #00fff7;
+  text-shadow:
+    2px 2px #00ffe1,
+    -2px -2px magenta;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.glitch::before {
+  color: magenta;
+  animation: glitchTop 2s infinite linear;
+}
+
+.glitch::after {
+  color: #00fff7;
+  animation: glitchBottom 2s infinite linear;
+}
+
+@keyframes glitchTop {
+  0% { clip-path: inset(0 0 85% 0); }
+  50% { clip-path: inset(10% 0 60% 0); }
+  100% { clip-path: inset(0 0 80% 0); }
+}
+
+@keyframes glitchBottom {
+  0% { clip-path: inset(60% 0 0 0); }
+  50% { clip-path: inset(30% 0 40% 0); }
+  100% { clip-path: inset(40% 0 0 0); }
+}
+
+/* NEON TEXT */
+.neon-text {
+  font-family: 'Press Start 2P';
+  font-size: 0.75rem;
+  margin-top: 25px;
+  color: #00ffee;
+  text-shadow:
+    0 0 5px #00ffee,
+    0 0 15px #00ffee;
+}
+
+.neon-title {
+  color: #22ff88;
+  text-shadow:
+    0 0 6px #22ff88,
+    0 0 15px #22ff88;
+}
+
+/* RIGHT PANEL */
+.right {
+  justify-self: end;
+  width: 100%;
+  max-width: 380px;
+  padding: 40px;
+  border-radius: 18px;
+}
+
+/* GLASS EFFECT */
+.glass {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 30px 80px rgba(0,0,0,.5);
+}
+
+/* FORM */
+.right p {
+  font-size: 13px;
+  opacity: .7;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 12px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background: #00fff7;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* SOCIAL ICON */
+.socials {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.socials a {
+  margin: 8px;
+  color: #00fff7;
+  font-size: 18px;
+  transition: .3s;
+}
+
+.socials a:hover {
+  color: #22ff88;
+  text-shadow:
+    0 0 10px #22ff88,
+    0 0 20px #22ff88;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+    padding: 25px;
+  }
+
+  .right {
+    justify-self: center;
+    margin-top: 30px;
+  }
+
+  .glitch {
+    font-size: 1.4rem;
+  }
+
+  .neon-text {
+    font-size: 0.6rem;
+  }
+}
