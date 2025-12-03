@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <title>Coming Soon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="assets/images/logo32.png" />
+  <link rel="icon" href="assets/images/logo192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="assets/images/logo180.png" sizes="180x180" />
 
   <!-- Font Pixel -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -14,45 +18,73 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=IM+Fell+English|Playfair+Display:900" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/base.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/demo1.css" />
+
+  <script>document.documentElement.className = "js"; var supportsCssVars = function () { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e }; supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+
 </head>
-<body>
 
-<div class="overlay"></div>
-<div class="scanlines"></div>
+<body class="demo-1 loading">
+  <main>
+    <div class="content">
+      <div class="glitch">
+        <div class="glitch__img"></div>
+        <div class="glitch__img"></div>
+        <div class="glitch__img"></div>
+        <div class="glitch__img"></div>
+        <div class="glitch__img"></div>
+      </div>
 
-<div class="main">
+      <!-- <h2 class="content__title">Haunted</h2> -->
 
-  <!-- LEFT -->
-  <div class="left">
+      <div class="main">
 
-    <h1 class="glitch" data-text="COMING SOON">COMING SOON</h1>
+        <!-- LEFT -->
+        <div class="left">
 
-    <p class="neon-text">
-      WEBSITE KAMI SEDANG DALAM TAHAP PERAWATAN<br>
-      UNTUK PENINGKATAN LAYANAN YANG LEBIH BAIK.
-    </p>
-    <span class="small" style="margin-top: 16px;">SMKN 8 Bone • IT SUPPORT BONE</span>
-  </div>
+          <h1 class="glitch-text content__title" data-text="COMING SOON">COMING SOON</h1>
 
-  <!-- RIGHT -->
-  <div class="right glass">
-    <h2 class="neon-title">STAY UPDATED</h2>
-    <p>Kami kabari setelah website aktif kembali.</p>
+          <p class="neon-text content__text">
+            WEBSITE KAMI SEDANG DALAM TAHAP PERAWATAN<br>
+            UNTUK PENINGKATAN LAYANAN YANG LEBIH BAIK.
+          </p>
+          <span class="neon-title content__title" style="margin-top: 16px; font-family: 'Poppins', sans-serif;">SMKN 8 Bone • IT
+            SUPPORT
+            BONE</span>
+        </div>
 
-    <input type="email" placeholder="your@email.com">
-    <button>NOTIFY ME</button>
+        <!-- RIGHT -->
+        <div class="right glass content__title">
+          <h2 class="neon-title content__title" style="text-align: center;">STAY UPDATED</h2>
+          <p class="content__text">Kami kabari setelah website aktif kembali.</p>
 
-    <div class="socials">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-x-twitter"></i></a>
-      <a href="#"><i class="fab fa-tiktok"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
+          <input type="email" placeholder="your@email.com">
+          <button>NOTIFY ME</button>
+
+          <div class="socials">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
 
-</div>
 
+  </main>
+
+  <div class="overlay"></div>
+  <div class="scanlines"></div>
+
+  <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/js/demo.js"></script>
 </body>
+
 </html>

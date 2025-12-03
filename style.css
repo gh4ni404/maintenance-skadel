@@ -1,21 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: url('assets/images/background.jpeg') center/cover no-repeat;
-  height: 100vh;
-  overflow: hidden;
-  color: white;
-}
 
 /* DARK OVERLAY */
 .overlay {
   position: fixed;
   inset: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
+  background: linear-gradient(to right, rgba(0,0,0,.75), rgba(0,0,0,.3));
 }
 
 /* RETRO SCANLINE EFFECT */
@@ -33,14 +21,13 @@ body {
   z-index: 99;
 }
 
-/* MAIN */
+/* MAIN LAYOUT */
 .main {
   position: relative;
   z-index: 2;
+  height: 100%;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  height: 100%;
-  padding: 60px;
 }
 
 /* LEFT */
@@ -48,15 +35,30 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 600px;
 }
 
 .logo {
-  width: 80px;
+  width: 70px;
   margin-bottom: 25px;
 }
 
+.left h1 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 2.8rem;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+}
+
+.left p {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.8rem;
+  line-height: 1.9;
+  opacity: 0.8;
+}
+
 /* GLITCH TEXT */
-.glitch {
+.glitch-text {
   font-family: 'Press Start 2P', monospace;
   font-size: 2.7rem;
   position: relative;
@@ -66,8 +68,8 @@ body {
     -2px -2px magenta;
 }
 
-.glitch::before,
-.glitch::after {
+.glitch-text::before,
+.glitch-text::after {
   content: attr(data-text);
   position: absolute;
   left: 0;
@@ -76,12 +78,12 @@ body {
   overflow: hidden;
 }
 
-.glitch::before {
+.glitch-text::before {
   color: magenta;
   animation: glitchTop 2s infinite linear;
 }
 
-.glitch::after {
+.glitch-text::after {
   color: #00fff7;
   animation: glitchBottom 2s infinite linear;
 }
@@ -118,47 +120,57 @@ body {
 
 /* RIGHT PANEL */
 .right {
+  align-self: center;
   justify-self: end;
   width: 100%;
-  max-width: 380px;
+  max-width: 370px;
   padding: 40px;
   border-radius: 18px;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* GLASS EFFECT */
 .glass {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow: 0 30px 80px rgba(0,0,0,.5);
+  background: rgba(255,255,255,0.01);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
 }
 
 /* FORM */
+.right h2 {
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
 .right p {
   font-size: 13px;
-  opacity: .7;
+  opacity: 0.7;
   margin-bottom: 15px;
 }
 
 input {
   width: 100%;
-  padding: 12px;
+  padding: 12px 10px;
   border-radius: 8px;
   border: none;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  outline: none;
 }
 
 button {
   width: 100%;
   padding: 12px;
   border-radius: 8px;
-  background: #00fff7;
   border: none;
-  cursor: pointer;
   font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(135deg,#22c55e,#16a34a);
+  color: black;
 }
 
-/* SOCIAL ICON */
+/* SOCIAL PLACEHOLDERS */
 .socials {
   margin-top: 18px;
   text-align: center;
@@ -179,10 +191,11 @@ button {
 }
 
 /* RESPONSIVE */
-@media(max-width: 768px) {
+@media (max-width: 768px) {
+
   .main {
     grid-template-columns: 1fr;
-    padding: 25px;
+    padding: 0 25px;
   }
 
   .right {
@@ -190,11 +203,19 @@ button {
     margin-top: 30px;
   }
 
-  .glitch {
+  .glitch-text {
     font-size: 1.4rem;
   }
 
   .neon-text {
+    font-size: 0.6rem;
+  }
+
+  .left h1 {
+    font-size: 1.6rem;
+  }
+
+  .left p {
     font-size: 0.6rem;
   }
 }
